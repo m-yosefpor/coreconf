@@ -1,0 +1,24 @@
+#gnome-terminal #preferences #profiles #colors #background:black #text:white
+#settings #background #background #colors #black
+#settings #power #dim screen when inactive off #blank screen never #when power button is pressed sleep #automatic suspend off
+#settings #universal access #mouse keys :On
+#setiings #universsal access #zoom : magnif :1 coloreffect: white on black : on
+#settings #add persian keyboard
+#settings #dock #auto-hide dock
+#tweak tools #general #animations:off #suspend when laptop lid is closed: on
+#tweak tools #appearance #application : yaru-dark #background adjustment :none
+battery percentage
+increase touchpad speed to can drag and drop and catch every thing
+
+set firefox dark theme
+firefox dark content extension
+firefox title bar check in menu customize to use title bar
+
+gnome-shell extension in firefox also: hide top bar
+
+add and rearange icons in dock
+## add ssh-key to github accoutn : #xclip -sel clip < ~/.ssh/id_rsa.pub  #setting # ssh and gpg key # add ssh key
+
+installing dropbox
+
+setiing : keyboard shortcuts : super+E : explorer, super+w : web browser

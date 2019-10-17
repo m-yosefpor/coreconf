@@ -1,0 +1,7 @@
+[Default Applications]
+text/plain=vim.desktop
+audio/mpeg=nvlc.desktop
+
+[Added Associations]
+text/plain=vim.desktop;eog.desktop;
+audio/mpeg=nvlc.desktop;
