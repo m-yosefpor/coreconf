@@ -1,12 +1,17 @@
 #!/bin/bash
 ##### a bash script for new os use with : bash 0_start
 ######################################################################
+GTK=false
+PYTHON=false
+
 while test $# -gt 0; do
-  case $1 in
+  case "$1" in
     gtk)
+      shift
       GTK=true
     ;;
     python)
+      shift
       PYTHON=true
     ;;
   esac
@@ -18,7 +23,7 @@ sudo apt update
 sudo apt install -y tmux wget openconnect htop xclip vim git docker.io python3 python3-dev python3-venv
 sudo apt install -y ubuntu-restricted-extras
 
-if GTK ; then
+if $GTK ; then
 ### removing some apps if exist 
   sudo apt remove -y firefox eog
   sudo snap install firefox eog vlc telegram-desktop #evince gimp libreoffice audacity
@@ -49,8 +54,7 @@ rmdir ~/Musics ~/Videos ~/Pictures ~/Documents ~/Public
 mkdir ~/0.github ~/1.other
 
 ##################### python3 config
-
-if PYTHON; then
+if $PYTHON; then
   python3 -m venv ~/py-venv
   . ~/py-venv/bin/activate
   ### need a vpn
@@ -89,8 +93,6 @@ git remote add origin git@github.com:/m-yosefpor/docs.git
 git remote add horigin https://github.com/m-yosefpor/docs.git
 git pull horigin master
 
-
-
 #################### vundle install and jedi-vim auto completion
 #git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #vim +PluginInstall +qall
@@ -99,17 +101,10 @@ git pull horigin master
 #cp app/dropbox /opt/dropbox
 #ln -s /opt/dropbox/dropbox.py /usr/local/bin/dropbox 'dropbox'
 
-
 ###################### config tor
 sudo apt install -y tor privoxy obfs4proxy
 cat torrc | sudo tee -a /etc/tor/torrc >/dev/null
 echo "forward-socks5 / 127.0.0.1:9050 ." > ~/.privoxy.conf
-
-
-
-
-
-
 
 ################# apps and defaults
 sudo cp nvlc.desktop /usr/share/applications/nvlc.desktop
