@@ -20,8 +20,12 @@ done
 ### updating repos
 sudo apt update
 
-sudo apt install -y tmux wget openconnect htop xclip vim git docker.io python3 python3-dev python3-venv
-sudo apt install -y ubuntu-restricted-extras
+sudo apt install -y \
+	tmux wget curl openconnect htop xclip vim git ssh-server\
+	docker.io docker-compose \
+	python3 python3-dev python3-venv \
+	ubuntu-restricted-extras \
+	tor privoxy obfs4proxy
 
 if $GTK ; then
 ### removing some apps if exist 
@@ -38,7 +42,8 @@ fi
 ### make sure everything is uptodate
 sudo apt -y upgrade
 
-#################### rc files
+######################################################################
+### rc files
 cp bashrc ~/.bashrc
 cp bash_aliases ~/.bash_aliases
 cat bash_aliases_pv >> ~/.bash_aliases
@@ -48,12 +53,25 @@ cp vimrc ~/.vimrc
 if GTK; then
   cat vimrc-gtk >> ~/.vimrc
 fi
-
-#################### rename and make directories
+### config git
+git config --global user.name 'm-yosefpor'
+git config --global user.email 'myusefpur@gmail.com'
+git config --global core.editor vim
+git config --global merge.tool vimdiff
+### config tor
+cat torrc | sudo tee -a /etc/tor/torrc >/dev/null
+echo "forward-socks5 / 127.0.0.1:9050 ." > ~/.privoxy.conf
+#### apps and defaults
+if $GTK ; then
+	sudo cp nvlc.desktop /usr/share/applications/nvlc.desktop
+	cp mimeapps.list ~/.config/mimeapps.list
+fi
+######################################################################
+#### rename and make directories
 rmdir ~/Musics ~/Videos ~/Pictures ~/Documents ~/Public
 mkdir ~/0.github ~/1.other
 
-##################### python3 config
+##################### python3 modules
 if $PYTHON; then
   python3 -m venv ~/py-venv
   . ~/py-venv/bin/activate
@@ -72,26 +90,13 @@ if $PYTHON; then
   pip install jupyter
   deactivate
 fi
-###################### config git
-
-git config --global user.name 'm-yosefpor'
-git config --global user.email 'myusefpur@gmail.com'
-git config --global core.editor vim
-git config --global merge.tool vimdiff
-###
-ssh-keygen -t rsa -b 4096 -C "myusefpur@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+########
+#ssh-keygen -t rsa -b 4096 -C "myusefpur@gmail.com"
+#eval "$(ssh-agent -s)"
+#ssh-add ~/.ssh/id_rsa
 ###
 #xclip -sel clip < ~/.ssh/id_rsa.pub
 ## add ssh-key to github accoutn : #setting # ssh and gpg key # add ssh key
-#####
-mkdir ~/0.github/docs.git
-cd ~/0.github/docs.git
-git init
-git remote add origin git@github.com:/m-yosefpor/docs.git
-git remote add horigin https://github.com/m-yosefpor/docs.git
-git pull horigin master
 
 #################### vundle install and jedi-vim auto completion
 #git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -101,11 +106,4 @@ git pull horigin master
 #cp app/dropbox /opt/dropbox
 #ln -s /opt/dropbox/dropbox.py /usr/local/bin/dropbox 'dropbox'
 
-###################### config tor
-sudo apt install -y tor privoxy obfs4proxy
-cat torrc | sudo tee -a /etc/tor/torrc >/dev/null
-echo "forward-socks5 / 127.0.0.1:9050 ." > ~/.privoxy.conf
 
-################# apps and defaults
-sudo cp nvlc.desktop /usr/share/applications/nvlc.desktop
-cp mimeapps.list ~/.config/mimeapps.list
