@@ -1,15 +1,24 @@
 #!/bin/bash
 ##### a bash script for new os use with : bash 0_start
 ######################################################################
-TYPE = $1 # gtk , cli
+while test $# -gt 0; do
+  case $1 in
+    gtk)
+      GTK=true
+    ;;
+    python)
+      PYTHON=true
+    ;;
+  esac
+done
 ######################################################################
 ### updating repos
 sudo apt update
 
+sudo apt install -y tmux wget openconnect htop xclip vim git docker.io python3 python3-dev python3-venv
+sudo apt install -y ubuntu-restricted-extras
 
-
-if [ $1 == 'gtk' ]
-then
+if GTK ; then
 ### removing some apps if exist 
   sudo apt remove -y firefox eog
   sudo snap install firefox eog vlc telegram-desktop #evince gimp libreoffice audacity
@@ -21,10 +30,6 @@ then
   sudo apt install -y gnome-terminal thunderbird nautilus evince cheese gnome-screenshot gnome-tweak-tool brasero vim-gtk#gimp libreoffice openshot
 fi
 
-sudo apt install -y tmux wget openconnect htop xclip vim #vim-gtk
-sudo apt install -y ubuntu-restricted-extras
-
-
 ### make sure everything is uptodate
 sudo apt -y upgrade
 
@@ -35,8 +40,7 @@ cat bash_aliases_pv >> ~/.bash_aliases
 cp tmux.conf ~/.tmux.conf
 cp vimrc ~/.vimrc
 
-if [ $1 == 'gtk' ]
-then
+if GTK; then
   cat vimrc-gtk >> ~/.vimrc
 fi
 
@@ -45,27 +49,27 @@ rmdir ~/Musics ~/Videos ~/Pictures ~/Documents ~/Public
 mkdir ~/0.github ~/1.other
 
 ##################### python3 config
-sudo apt install -y python3 python3-dev python3-venv
-cd ~
-python3 -m venv py-venv
-. py-venv/bin/activate
-### need a vpn
-pip install wheel
-pip install numpy
-pip install scipy
-pip install pandas
-pip install matplotlib
-pip install numba
-pip install sympy
-pip install cython
-pip install sklearn
-pip install tensorflow
-pip install qutip
-pip install jupyter
-deactivate
 
+if PYTHON; then
+  python3 -m venv ~/py-venv
+  . ~/py-venv/bin/activate
+  ### need a vpn
+  pip install wheel
+  pip install numpy
+  pip install scipy
+  pip install pandas
+  pip install matplotlib
+  pip install numba
+  pip install sympy
+  pip install cython
+  pip install sklearn
+  pip install tensorflow
+  pip install qutip
+  pip install jupyter
+  deactivate
+fi
 ###################### config git
-sudo apt install -y git
+
 git config --global user.name 'm-yosefpor'
 git config --global user.email 'myusefpur@gmail.com'
 git config --global core.editor vim
