@@ -29,14 +29,17 @@ sudo apt install -y \
 
 if $GTK ; then
 ### removing some apps if exist 
-  sudo apt remove -y firefox eog
-  sudo snap install firefox eog vlc telegram-desktop #evince gimp libreoffice audacity
+sudo apt remove -y firefox eog
+sudo snap install firefox eog vlc telegram-desktop #evince gimp libreoffice audacity
 
-  sudo apt remove -y gedit totem rhythmbox file-roller #yelp
-  sudo snap remove gnome-calculator gnome-system-monitor
+sudo apt remove -y gedit totem rhythmbox file-roller #yelp
+sudo snap remove gnome-calculator gnome-system-monitor
 
-  ### install required packages
-  sudo apt install -y gnome-terminal thunderbird nautilus evince cheese gnome-screenshot gnome-tweak-tool brasero vim-gtk#gimp libreoffice openshot
+### install required packages
+sudo apt install -y \
+gnome-terminal thunderbird nautilus evince cheese \
+gnome-screenshot gnome-tweak-tool brasero vim-gtk \
+#gimp libreoffice openshot
 fi
 
 ### make sure everything is uptodate
@@ -44,14 +47,14 @@ sudo apt -y upgrade
 
 ######################################################################
 ### rc files
-cp bashrc ~/.bashrc
-cp bash_aliases ~/.bash_aliases
-cat bash_aliases_pv >> ~/.bash_aliases
-cp tmux.conf ~/.tmux.conf
-cp vimrc ~/.vimrc
+cp cli/bashrc ~/.bashrc
+cp cli/bash_aliases ~/.bash_aliases
+cat cli/bash_aliases_pv >> ~/.bash_aliases
+cp cli/tmux.conf ~/.tmux.conf
+cp cli/vimrc ~/.vimrc
 
 if GTK; then
-  cat vimrc-gtk >> ~/.vimrc
+  cat gtk/vimrc-gtk >> ~/.vimrc
 fi
 ### config git
 git config --global user.name 'm-yosefpor'
@@ -63,8 +66,8 @@ cat torrc | sudo tee -a /etc/tor/torrc >/dev/null
 echo "forward-socks5 / 127.0.0.1:9050 ." > ~/.privoxy.conf
 #### apps and defaults
 if $GTK ; then
-	sudo cp nvlc.desktop /usr/share/applications/nvlc.desktop
-	cp mimeapps.list ~/.config/mimeapps.list
+	sudo cp gtk/nvlc.desktop /usr/share/applications/nvlc.desktop
+	cp gtk/mimeapps.list ~/.config/mimeapps.list
 fi
 ######################################################################
 #### rename and make directories
