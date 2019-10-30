@@ -21,7 +21,7 @@ done
 sudo apt update
 
 sudo apt install -y \
-	tmux wget curl openconnect htop xclip vim git ssh-server\
+	tmux wget curl openconnect htop xclip vim git openssh-server\
 	docker.io docker-compose \
 	python3 python3-dev python3-venv \
 	ubuntu-restricted-extras \
@@ -53,7 +53,7 @@ cat cli/bash_aliases_pv >> ~/.bash_aliases
 cp cli/tmux.conf ~/.tmux.conf
 cp cli/vimrc ~/.vimrc
 
-if GTK; then
+if $GTK; then
   cat gtk/vimrc-gtk >> ~/.vimrc
 fi
 ### config git
@@ -71,7 +71,7 @@ if $GTK ; then
 fi
 ######################################################################
 #### rename and make directories
-rmdir ~/Musics ~/Videos ~/Pictures ~/Documents ~/Public
+rmdir ~/Music ~/Videos ~/Pictures ~/Documents ~/Public ~/Templates
 mkdir ~/0.github ~/1.other
 
 ##################### python3 modules

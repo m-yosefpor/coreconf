@@ -1,5 +1,5 @@
-l() { ls -lh --color=always "$@" | awk '{print $5, $9$10$11}' | column -t | column;}
-la() { ls -Alh --color=always "$@" | awk '{print $5, $9$10$11}' | column -t | column;}
+l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
+la() { ls -Al --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
 
 c() { cd "$@" && l ; } 
 alias ..='c ..'
