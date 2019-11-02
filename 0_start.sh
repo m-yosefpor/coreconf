@@ -21,7 +21,7 @@ then
   sudo apt install -y gnome-terminal thunderbird nautilus evince cheese gnome-screenshot gnome-tweak-tool brasero vim-gtk#gimp libreoffice openshot
 fi
 
-sudo apt install -y tmux wget openconnect htop xclip vim #vim-gtk
+sudo apt install -y git tmux wget openconnect htop xclip vim
 sudo apt install -y ubuntu-restricted-extras
 
 
