@@ -1,14 +1,13 @@
-l() { ls -lh --color=always "$@" | awk '{print $5, $9$10$11}' | column -t | column;}
-la() { ls -Alh --color=always "$@" | awk '{print $5, $9$10$11}' | column -t | column;}
+l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
+la() { ls -Al --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
 
 c() { cd "$@" && l ; } 
 alias ..='c ..'
 alias ...='c ../../'
 
-x() { exec "$@" >/dev/null 2>&1 & } 
+x() { exec "$@" &>/dev/null & } 
 
-alias i='sudo apt update && sudo apt install'
-ii() { sudo apt-get install -y "$@" 1>/dev/null; }
+alias i='sudo apt install'
 alias ui='sudo apt remove'
 
 alias g=grep
