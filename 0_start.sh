@@ -20,14 +20,26 @@ done
 ### updating repos
 sudo apt update
 
-sudo apt install -y \
-	tmux wget curl openconnect htop xclip vim git openssh-server\
+sudo apt install -y \ #preinstalled, but just to make sure
+	screen wget openvpn top vi git openssh-server\
 	docker.io docker-compose \
 	python3 python3-dev python3-venv \
 	ubuntu-restricted-extras \
 	tor privoxy obfs4proxy
 
+
+sudo apt install -y \ #improved
+	tmux curl openconnect htop vim
+
+
+
+#############################
 if $GTK ; then
+
+#sudo apt install -y \
+#	xorg xinit
+#	ubutnu-dekstop
+
 ### removing some apps if exist 
 sudo apt remove -y firefox eog
 sudo snap install firefox eog vlc telegram-desktop #evince gimp libreoffice audacity
@@ -39,6 +51,7 @@ sudo snap remove gnome-calculator gnome-system-monitor
 sudo apt install -y \
 gnome-terminal thunderbird nautilus evince cheese \
 gnome-screenshot gnome-tweak-tool brasero vim-gtk \
+xclip
 #gimp libreoffice openshot
 fi
 
