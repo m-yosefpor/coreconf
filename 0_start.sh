@@ -20,18 +20,15 @@ done
 ### updating repos
 sudo apt update
 
-sudo apt install -y \ #preinstalled, but just to make sure
-	screen wget openvpn top vi git openssh-server\
+sudo apt install -y \ #some preinstalled, but just to make sure
+	tmux wget curl openvpn openconnect vim htop git openssh-server\
 	docker.io docker-compose \
 	python3 python3-dev python3-venv \
 	ubuntu-restricted-extras \
 	tor privoxy obfs4proxy
 
 
-sudo apt install -y \ #improved
-	tmux curl openconnect htop vim
-
-
+#screen , vi , top
 
 #############################
 if $GTK ; then
