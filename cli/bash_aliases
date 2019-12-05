@@ -1,5 +1,5 @@
 l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
-la() { ls -Al --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
+alias la='ls -lah --color=always'
 
 c() { cd "$@" && l ; } 
 alias ..='c ..'
@@ -25,14 +25,16 @@ alias cnet='ping -c 1 8.8.8.8 | g time= | awk '\''{print $7}'\'' '
 
 
 alias untar='tar -zxvf'
+
+targz() { tar -zcvf "$@".tar.gz "$@" ;}
+
 alias gitup='git add --all && git commit -m "up" && git pull origin master && git push origin master'
 
 alias py='python3'
 alias p='source ~/py-venv/bin/activate && python '
 alias j='source ~/py-venv/bin/activate && python -m jupyter notebook '
 alias d='sudo docker'
+dexec() { sudo docker exec -it "$@" /bin/sh;}
+alias dc='sudo docker-compose'
 alias v='vim'
 alias tele='x telegram-desktop'
-
-#####
-
