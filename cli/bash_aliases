@@ -28,7 +28,7 @@ alias untar='tar -zxvf'
 
 targz() { tar -zcvf "$@".tar.gz "$@" ;}
 
-alias gitup='git add --all && git commit -m "up" && git pull origin master && git push origin master'
+alias gitup='git pull && git add --all && git commit -m "up" && git push'
 
 alias py='python3'
 alias p='source ~/py-venv/bin/activate && python '
