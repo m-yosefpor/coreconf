@@ -33,6 +33,9 @@ noremap yy "+yy
 noremap p "+p
 "############
 "#inoremap <c-h>
+inoremap <c-b> <left>
+inoremap <c-f> <right>
+inoremap <c-d> <delete>
 inoremap <c-w> <c-o>db
 nnoremap <c-w> db
 "#inoremap <c-u>
