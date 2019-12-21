@@ -26,3 +26,20 @@ iabbrev im import
 iabbrev pr print
 iabbrev ti time.time()
 "#####
+noremap d "+d
+noremap dd "+dd
+noremap y "+y
+noremap yy "+yy
+noremap p "+p
+"############
+"#inoremap <c-h>
+inoremap <c-w> <c-o>db
+nnoremap <c-w> db
+"#inoremap <c-u>
+nnoremap <c-u> d0
+inoremap <c-k> <c-o>d$
+nnoremap <c-k> d$ 
+inoremap <c-a> <c-o>0
+nnoremap <c-a> 0
+nnoremap <c-e> $
+inoremap <c-e> <c-o>$
