@@ -9,12 +9,6 @@ set list "set nolist
 syntax on
 highlight Function ctermfg=10
 highlight Include ctermfg=161
-"#####
-noremap d "+d
-noremap dd "+dd
-noremap y "+y
-noremap yy "+yy
-noremap p "+p
 "#######################################################
 nnoremap s o<Esc>
 nnoremap S O<Esc>
