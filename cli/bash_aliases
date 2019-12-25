@@ -1,4 +1,4 @@
-l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column;}
+l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column; }
 alias la='ls -lah --color=always'
 
 c() { cd "$@" && l ; } 
@@ -34,7 +34,9 @@ alias py='python3'
 alias p='source ~/py-venv/bin/activate && python '
 alias j='source ~/py-venv/bin/activate && python -m jupyter notebook '
 alias d='sudo docker'
-dexec() { sudo docker exec -it "$@" /bin/sh;}
+dexec() { sudo docker exec -u root -it "$@" /bin/sh; }
 alias dc='sudo docker-compose'
-alias v='vim'
+alias v='vim -S ~/hi/cli/vimrc'
+alias tmux='tmux -f ~/hi/cli/tmux.conf'
+
 alias tele='x telegram-desktop'
