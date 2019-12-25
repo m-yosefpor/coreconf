@@ -1,5 +1,0 @@
-noremap d "+d
-noremap dd "+dd
-noremap y "+y
-noremap yy "+yy
-noremap p "+p
