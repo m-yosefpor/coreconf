@@ -6,7 +6,7 @@ set showcmd
 set listchars=tab:>-
 set tabstop=5
 set list "set nolist
-syntax on
+"syntax on
 highlight Function ctermfg=10
 highlight Include ctermfg=161
 "#######################################################
