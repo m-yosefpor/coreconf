@@ -30,6 +30,7 @@ noremap <c-a> 0
 inoremap <c-e> <c-o>$
 noremap <c-e> $
 
+noremap <Tab> i<Tab><Esc>
 
 "#####
 
