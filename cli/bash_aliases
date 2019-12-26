@@ -26,7 +26,7 @@ alias cnet='ping -c 1 8.8.8.8 | g time= | awk '\''{print $7}'\'' '
 
 alias untar='tar -zxvf'
 
-targz() { tar -zcvf "$@".tar.gz "$@" ;}
+targz() { tar -zcvf "$@".tar.gz "$@" ; }
 
 alias gitup='git pull;git commit -am up; git push'
 
