@@ -2,6 +2,7 @@ l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column; }
 alias la='ls -lah --color=always'
 
 c() { cd "$@" && l ; } 
+cm() { mkdir "$@" ; cd "$@" ;}
 alias ..='c ..'
 alias ...='c ../../'
 
