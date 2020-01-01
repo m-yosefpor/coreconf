@@ -16,9 +16,10 @@ nnoremap S O<Esc>
 nnoremap c :if getline('.')[0]=='#'<Enter>normal! 0x<Enter>else<Enter>normal! 0i#<Enter>endif<Enter><Enter>
 "#####
 "#inoremap <c-h>
-inoremap <c-b> <left>
-inoremap <c-f> <right>
-inoremap <c-d> <delete>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+inoremap <c-f> <delete>
+inoremap <c-d> <BS>
 inoremap <c-w> <c-o>db
 noremap <c-w> db
 "#inoremap <c-u>
