@@ -42,6 +42,6 @@ dexec() { sudo docker exec -u root -it "$@" /bin/sh; }
 alias dc='sudo docker-compose'
 alias k='sudo kubectl'
 alias v='vim -S ~/hi/cli/vimrc'
-alias tmux='tmux -f ~/hi/cli/tmux.conf a'
+alias tmx='tmux -f ~/hi/cli/tmux.conf a'
 
 alias tele='x telegram-desktop'
