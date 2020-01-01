@@ -1,2 +1,2 @@
-source ./cli/bash_configs
-source ./cli/bash_aliases
+source ~/hi/cli/bash_configs
+source ~/hi/cli/bash_aliases
