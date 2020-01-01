@@ -37,6 +37,7 @@ alias j='source ~/py-venv/bin/activate && python -m jupyter notebook '
 alias d='sudo docker'
 dexec() { sudo docker exec -u root -it "$@" /bin/sh; }
 alias dc='sudo docker-compose'
+alias k='sudo kubectl'
 alias v='vim -S ~/hi/cli/vimrc'
 alias tmux='tmux -f ~/hi/cli/tmux.conf a'
 
