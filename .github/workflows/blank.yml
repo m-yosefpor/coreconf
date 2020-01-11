@@ -9,7 +9,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Run a single-line script
+      run: pwd
+    - name: dir
+      run: ls
     - name: Run a multi-line script
       run: |
         echo hi
+        echo pwd
         source src
