@@ -1,4 +1,4 @@
-bind -f ~/hi/cli/newbind
+bind -f ./cli/newbind
 
 #####
 l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column; }
