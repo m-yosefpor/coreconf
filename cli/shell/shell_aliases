@@ -1,0 +1,85 @@
+#Good Pracitce:
+#	1. Do not use aliases which correspond to commands(do not override)
+#	2. Do not use aliases in aliases #? or atleast be carefule of order
+#	3. Use short aliases for more frequently used
+########## default
+#l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column; } #linux
+#alias la='ls -lah --color=always' #linux
+
+export CLICOLOR_FORCE=1 #mac
+alias l='ls -G' #mac
+alias la='ls -lahG' #mac
+##
+c() { cd "$@" && l ; } 
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias ..='c ..'
+alias ...='c ../../'
+alias ....='c ../../../'
+##
+alias md='mkdir -p'
+mc() { mkdir "$@" ; cd "$@" ; }
+alias rd=rmdir
+##
+x() { exec "$@" &>/dev/null & } 
+##
+alias i='sudo apt install'
+alias ui='sudo apt remove'
+##
+alias g=grep
+alias a=ack
+alias f=fzf
+alias le='less -R'
+#alias e=echo
+#alias h=head
+alias s='sudo ' # for using sudo + alias
+##
+alias cnet='ping -c 1 8.8.8.8 | g time= | awk '\''{print $7}'\'' '
+alias cdns='nslookup google.com'
+alias sdnsc='echo -e "nameserver 1.1.1.1\nnameserver 1.0.0.1" | sudo tee /etc/resolv.conf'
+alias sdnsg='echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" | sudo tee /etc/resolv.conf'
+alias shecan='echo -e "nameserver 178.22.122.100\nnameserver 185.51.200.2" | sudo tee /etc/resolv.conf'
+##
+alias untar='tar -zxvf'
+targz() { tar -zcvf "$@".tar.gz "$@" ; }
+
+########## need packages
+alias kvpnc='sudo pkill openconnect'
+alias kvpnf='sudo pkill openfortivpn'
+alias kvpno='sudo pkill openvpn'
+alias cvpnc='ps -A | g openconnect; ping -c 1 youtube.com | g time= | awk '\''{print $8}'\'' '
+alias cvpno='ps -A | g openvpn; ping -c 1 youtube.com | g time= | awk '\''{print $8}'\'' '
+alias privoxy='privoxy ~/hi/privoxy.conf'
+##
+alias v='vim -S ~/hi/cli/editor/vimrc'
+alias tmx='tmux -f ~/hi/cli/multiplexer/tmux.conf a'
+alias scrn='screen -c ~/hi/cli/multiplexer/screenrc'
+##
+gitup() { git pull; git add --all; git -c user.name="Mohammad Yosefpor" -c user.email="myusefpur@gmail.com" commit -m "$@"; if [ -z "$(git status | grep 'Your branch is up to date with')" ]; then git push; else echo 'nothing to push'; fi }
+alias gf='git fetch'
+alias gfa='git fetch --all --prune'
+alias gm='git merge'
+alias gc='git clone --depht 1'
+##
+alias py='python3'
+alias p='source ~/py-venv/bin/activate && python '
+alias j='source ~/py-venv/bin/activate && python -m jupyter notebook '
+alias d='sudo docker'
+dexec() { sudo docker exec -u root -it "$@" /bin/sh; }
+alias dc='sudo docker-compose'
+alias k='sudo kubectl'
+alias ap='ansible-playbook'
+alias tf='terraform'
+alias os='openstack'
+##
+alias tele='x telegram-desktop'
+
+########## cred
+alias vpnc='source ~/hi/cred/vpn/openconnect; echo $OPENCONNECT_PASSWD | sudo openconnect $OPENCONNECT_SRV --servercert $OPENCONNECT_CERT -u $OPENCONNECT_USER --passwd-on-stdin -b'
+alias vpnf='sudo openfortivpn -c ~/hi/cred/vpn/forti'
+alias cvpnf='source ~/hi/cred/vpn/forti-check; ps -A | g openfortivpn; ping -c 1 $FORTI_CHECK | g time= | awk '\''{print $8}'\'' '
+alias vpno='cat ~/hi/cred/vpn/openvpn | sudo openvpn --config ~/hi/cred/vpn/openvpn.ovpn --auth-user-pass'
+alias tor='tor -f ~/hi/cred/vpn/torrc'
+
+alias sshc='ssh -F ~/hi/cred/ssh.conf'

@@ -1,0 +1,5 @@
+brew install $(cat $HOME/hi/init/package.list)
+chsh -s /usr/local/bin/zsh
+CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install fzf
+$(brew --prefix)/opt/fzf/install

@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Initializing
+      run: |
+        cp -r ../hi $HOME/hi
+        $HOME/hi/init/ubuntu
+    - name: Check zshrc config
+      run: zsh -c "source $HOME/hi/zrc"
+    - name: Check bashrc config
+      run: bash -c "source $HOME/hi/brc"
+    #- name: Check screenrc config
+      #run: source $HOME/hi/src
+    #- name: Check tmux config
+      #run: source $HOME/hi/trc

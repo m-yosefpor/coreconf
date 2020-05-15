@@ -1,0 +1,13 @@
+prompt_time() {
+  echo -n "%{%F{blue}%}"
+  echo -n "\ue0b2"
+  echo -n "%{%K{blue}%}%{%F{white}%}"
+  echo -n " "
+  echo -n "$(date '+%X ')"
+}
+
+build_right_prompt() {
+  prompt_time
+}
+
+RPROMPT='$(build_right_prompt)'
