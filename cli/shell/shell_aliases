@@ -52,7 +52,7 @@ alias cvpnc='ps -A | g openconnect; ping -c 1 youtube.com | g time= | awk '\''{p
 alias cvpno='ps -A | g openvpn; ping -c 1 youtube.com | g time= | awk '\''{print $8}'\'' '
 alias privoxy='privoxy ~/hi/privoxy.conf'
 ##
-alias v='vim -S ~/hi/cli/editor/vimrc'
+alias v='nvim -S ~/hi/cli/editor/vimrc'
 alias tmx='tmux -f ~/hi/cli/multiplexer/tmux.conf a'
 alias scrn='screen -c ~/hi/cli/multiplexer/screenrc'
 ##

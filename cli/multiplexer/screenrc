@@ -125,3 +125,6 @@ bindkey "^[OQ" eval "command -c rsz" # enter resize mode
 #bind -c rsz -k kr eval "focus right" "command -c rsz" # Right
 #bind -c rsz -k ku eval "focus up"    "command -c rsz" # Up
 #bind -c rsz -k kd eval "focus down"  "command -c rsz" # Down
+
+# nvim in Esc key doesn't wait for more than just 5 milliseconds
+maptimeout 5
