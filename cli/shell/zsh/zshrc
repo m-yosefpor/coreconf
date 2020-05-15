@@ -12,7 +12,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
 # see 'man strftime' for details.
 HIST_STAMPS="%m/%d %H:%M:%S"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions
+	docker kubectl oc helm terraform
+)
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

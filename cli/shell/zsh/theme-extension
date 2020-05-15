@@ -1,3 +1,4 @@
+
 prompt_time() {
   echo -n "%{%F{blue}%}"
   echo -n "\ue0b2"
@@ -5,6 +6,23 @@ prompt_time() {
   echo -n " "
   echo -n "$(date '+%X ')"
 }
+
+
+######## (prompt)
+build_prompt() {
+  RETVAL=$?
+  prompt_status
+  prompt_virtualenv
+  tf_prompt_info
+  prompt_context
+  prompt_dir
+  prompt_git
+  prompt_bzr
+  prompt_hg
+  prompt_end
+}
+PROMPT='%{%f%r%k%}$(build_prompt) '
+
 
 build_right_prompt() {
   prompt_time
