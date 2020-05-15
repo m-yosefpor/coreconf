@@ -1,4 +1,4 @@
 bash zsh
 screen tmux
-nvim
+neovim
 ack
