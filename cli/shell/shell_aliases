@@ -2,6 +2,8 @@
 #	1. Do not use aliases which correspond to commands(do not override)
 #	2. Do not use aliases in aliases #? or atleast be carefule of order
 #	3. Use short aliases for more frequently used
+########## ENV
+TERM=screen-256color
 ########## default
 #l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column; } #linux
 #alias la='ls -lah --color=always' #linux
