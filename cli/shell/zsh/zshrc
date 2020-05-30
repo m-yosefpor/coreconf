@@ -8,6 +8,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
+DISABLE_AUTO_TITLE="true"
 
 # see 'man strftime' for details.
 HIST_STAMPS="%m/%d %H:%M:%S"
