@@ -12,7 +12,7 @@ jobs:
     - name: Initializing
       run: |
         cp -r ../hi $HOME/hi
-        $HOME/hi/init/ubuntu
+        $HOME/hi/init/install ubuntu
     - name: Check zshrc config
       run: zsh -c "source $HOME/hi/zrc"
     - name: Check bashrc config

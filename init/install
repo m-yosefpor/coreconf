@@ -1,0 +1,41 @@
+#!/bin/sh
+#### (getopts)
+DEFAULT=0
+##
+while getopts 'd' opt; do
+    case $opt in
+        d) DEFAULT=1;;
+        ?)
+           echo "script usage: $(basename $0) [-d] OS" >&2
+           exit 1
+           ;;
+    esac
+done
+#### (required packages)
+case $1 in
+    centos)
+        sudo yum install -y $(cat $HOME/hi/init/package.list)
+    ;;
+    ubuntu)
+        sudo apt-get install -y $(cat $HOME/hi/init/package.list) fonts-powerline
+    ;;
+    macos)
+        brew install $(cat $HOME/hi/init/package.list)
+    ;;
+    *)
+        echo "Please enter a OS:\n\tcentos\n\tubuntu\n\tmacos"
+        exit 1
+    ;;
+esac
+#### (oh-my-zsh)
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#### (fzf)
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
+#### (DEFALUT)
+if [ $DEFAULT == 1 ]; then
+    chsh -s $(which zsh)
+    echo "source ~/hi/zrc" > ~/.zshrc
+fi
