@@ -31,7 +31,8 @@ alias ui='sudo apt remove'
 ##
 alias g=grep
 alias a=ack
-alias f=fzf
+export FZF_DEFAULT_OPTS='--height 40% --layout reverse --exact --preview "bat --style=numbers --color=always --line-range :500 {}"'
+alias f='fzf'
 alias le='less -R'
 #alias e=echo
 #alias h=head

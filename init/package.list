@@ -2,3 +2,4 @@ bash zsh
 screen tmux
 neovim
 ack
+bat
