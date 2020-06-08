@@ -49,4 +49,18 @@ iabbrev im import
 iabbrev pr print
 iabbrev ti time.time()
 "############
+" Commenting blocks of code.
+filetype on
+autocmd BufNewFile,BufRead *.py let b:comment_leader = '// '
+" setfiletype octopress
+
+autocmd FileType c,cpp,java,scala :let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   :let b:comment_leader = '# '
+autocmd FileType conf,fstab       :let b:comment_leader = '# '
+autocmd FileType tex              :let b:comment_leader = '% '
+autocmd FileType mail             :let b:comment_leader = '> '
+autocmd FileType vim              :let b:comment_leader = '" '
+noremap c :s/^/\=b:comment_leader<CR>
+autocmd BufNewFile *.txt :let b:var = '1'
+" autocmd BufRead *.txt :let b:var = '1'
 

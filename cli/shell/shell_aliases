@@ -54,7 +54,7 @@ alias kvpno='sudo pkill openvpn'
 alias cvpnc='ps -A | g openconnect; ping -c 1 youtube.com | g time= | awk '\''{print $8}'\'' '
 alias cvpno='ps -A | g openvpn; ping -c 1 youtube.com | g time= | awk '\''{print $8}'\'' '
 alias privoxy='privoxy ~/hi/privoxy.conf'
-##
+##### need config file
 alias v='nvim -S ~/hi/cli/editor/vimrc'
 alias tmx='tmux -f ~/hi/cli/multiplexer/tmux.conf a'
 alias scrn='screen -c ~/hi/cli/multiplexer/screenrc'
@@ -73,6 +73,7 @@ dexec() { sudo docker exec -u root -it "$@" /bin/sh; }
 alias dc='sudo docker-compose'
 alias k='sudo kubectl'
 alias ap='ansible-playbook'
+alias an='ansible'
 alias tf='terraform'
 alias os='openstack'
 ##
