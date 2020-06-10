@@ -9,34 +9,33 @@ TERM=screen-256color
 #alias la='ls -lah --color=always' #linux
 
 export CLICOLOR_FORCE=1 #mac
-alias l='ls -G' #mac
-alias la='ls -lahG' #mac
+#alias l='ls -G' #mac
+#alias la='ls -lahG' #mac
 ##
-c() { cd "$@" && l ; } 
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias ..='c ..'
-alias ...='c ../../'
-alias ....='c ../../../'
+#c() { cd "$@" && l ; } 
+#alias 1='cd -'
+#alias 2='cd -2'
+#alias 3='cd -3'
+#alias ..='c ..'
+#alias ...='c ../../'
+#alias ....='c ../../../'
 ##
-alias md='mkdir -p'
-mc() { mkdir "$@" ; cd "$@" ; }
-alias rd=rmdir
+#alias mk='mkdir -p'
+#mc() { mkdir "$@" ; cd "$@" ; }
+#alias rd=rmdir
 ##
-x() { exec "$@" &>/dev/null & } 
+#x() { exec "$@" &>/dev/null & } 
 ##
-alias i='sudo apt install'
-alias ui='sudo apt remove'
+#alias i='sudo apt install'
+#alias ui='sudo apt remove'
 ##
-alias g=grep
-alias a=ack
-export FZF_DEFAULT_OPTS='--height 40% --layout reverse --exact --preview "bat --style=numbers --color=always --line-range :500 {}"'
-alias f='fzf'
-alias le='less -R'
+#alias g=grep
+#alias a=ack
+#alias f='fzf'
+#alias le='less -R'
 #alias e=echo
 #alias h=head
-alias s='sudo ' # for using sudo + alias
+#alias s='sudo ' # for using sudo + alias
 ##
 alias cnet='ping -c 1 8.8.8.8 | g time= | awk '\''{print $7}'\'' '
 alias cdns='nslookup google.com'
@@ -46,6 +45,8 @@ alias shecan='echo -e "nameserver 178.22.122.100\nnameserver 185.51.200.2" | sud
 ##
 alias untar='tar -zxvf'
 targz() { tar -zcvf "$@".tar.gz "$@" ; }
+##
+export FZF_DEFAULT_OPTS='--height 40% --layout reverse --exact --preview "bat --style=numbers --color=always --line-range :500 {}"'
 
 ########## need packages
 alias kvpnc='sudo pkill openconnect'
@@ -68,14 +69,14 @@ alias gc='git clone --depht 1'
 alias py='python3'
 alias p='source ~/py-venv/bin/activate && python '
 alias j='source ~/py-venv/bin/activate && python -m jupyter notebook '
-alias d='sudo docker'
+#alias d='sudo docker'
 dexec() { sudo docker exec -u root -it "$@" /bin/sh; }
 alias dc='sudo docker-compose'
 alias k='sudo kubectl'
-alias ap='ansible-playbook'
-alias an='ansible'
-alias tf='terraform'
-alias os='openstack'
+#alias ap='ansible-playbook'
+#alias an='ansible'
+#alias tf='terraform'
+#alias os='openstack'
 ##
 alias tele='x telegram-desktop'
 
