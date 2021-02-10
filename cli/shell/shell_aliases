@@ -82,7 +82,8 @@ alias tele='x telegram-desktop'
 
 ########## cred
 alias vpnc='source ~/hi/cred/vpn/openconnect; echo $OPENCONNECT_PASSWD | sudo openconnect $OPENCONNECT_SRV --servercert $OPENCONNECT_CERT -u $OPENCONNECT_USER --passwd-on-stdin -b'
-alias vpnf='sudo openfortivpn -c ~/hi/cred/vpn/forti'
+alias vpnf='sudo openfortivpn -c ~/data/snapp/cred/forti-as'
+alias vpna='kill -9 $(ps aux | grep "ssh -D 10000" | grep -v color | awk '\''{ print $2 }'\'') ; ssh -D 10000 -fN -F ~/data/snapp/cred/config arvan'
 alias cvpnf='source ~/hi/cred/vpn/forti-check; ps -A | g openfortivpn; ping -c 1 $FORTI_CHECK | g time= | awk '\''{print $8}'\'' '
 alias vpno='cat ~/hi/cred/vpn/openvpn | sudo openvpn --config ~/hi/cred/vpn/openvpn.ovpn --auth-user-pass'
 alias tor='tor -f ~/hi/cred/vpn/torrc'
