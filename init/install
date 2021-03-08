@@ -37,5 +37,5 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 #### (DEFALUT)
 if [ $DEFAULT == 1 ]; then
     chsh -s $(which zsh)
-    echo "source ~/hi/zrc" > ~/.zshrc
+    echo "source ~/github/hi/zrc" > ~/.zshrc
 fi
