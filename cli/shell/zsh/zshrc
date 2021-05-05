@@ -35,4 +35,8 @@ source $HOME/hi/cli/shell/zsh/theme-extension
 bindkey \^U backward-kill-line
 
 #############
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
+#############
 source $HOME/hi/cli/shell/shell_aliases
