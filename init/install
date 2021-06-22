@@ -39,3 +39,4 @@ if [ $DEFAULT == 1 ]; then
     chsh -s $(which zsh)
     echo "source ~/github/hi/zrc" > ~/.zshrc
 fi
+ln -sf ~/hi/gitconfig ~/.gitconfig

@@ -1,0 +1,24 @@
+[user]
+	name = Mohammad Yosefpor
+	email = myusefpur@gmail.com
+	signingkey = A8AA8FA7A1A2EB7D91192C80D85F1B06D39E2D8F
+[pull]
+	rebase = false
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+
+[interactive]
+    diffFilter = delta --color-only
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
