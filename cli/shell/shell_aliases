@@ -5,13 +5,14 @@
 ########## ENV
 TERM=screen-256color
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/bin:$GOPATH/bin
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:${PATH}:$GOPATH/bin"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 export TMPDIR=/tmp
 ########## default
 #l() { ls -l --color=always "$@" | awk '{print $9$10$11}' | column -t | column; } #linux
 #alias la='ls -lah --color=always' #linux
 
-export CLICOLOR_FORCE=1 #mac
+# export CLICOLOR_FORCE=1 #mac
 #alias l='ls -G' #mac
 #alias la='ls -lahG' #mac
 ##
@@ -33,7 +34,6 @@ export CLICOLOR_FORCE=1 #mac
 #alias ui='sudo apt remove'
 ##
 #alias g=grep
-#alias a=ack
 #alias f='fzf'
 #alias le='less -R'
 #alias e=echo
