@@ -92,3 +92,9 @@ alias vpno='cat ~/hi/cred/vpn/openvpn | sudo openvpn --config ~/hi/cred/vpn/open
 alias tor='tor -f ~/hi/cred/vpn/torrc'
 
 alias sshc='ssh -F ~/data/snapp/cred/config'
+alias sshdr="ssh -F ~/data/snapp-dr/cred/config"
+alias vpndr='sudo openfortivpn -c ~/data/snapp-dr/cred/forti-jordan'
+alias dx='docker exec -it'
+alias vpnw="sudo knock 178.22.121.34 7000 8000 -d 1000 && sudo wg-quick up /Users/my/Mohammad.conf"
+alias kvpnw="sudo wg-quick down /Users/my/Mohammad.conf"
+

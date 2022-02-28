@@ -4,13 +4,9 @@ Some customizations including cool aliases, zshrc, bashrc, screenrc, tmux.conf, 
 
 ## Install requirements
 
-Ubuntu: `~/hi/init/ubuntu`
-
-CentOS: `~/hi/init/centos`
-
-MacOS: `~/hi/init/macos`
-
 ## Usage
+
+cd ~ && git clone https://github.com/m-yosefpor/hi
 
 zsh source: `source ~/hi/brc`
 
