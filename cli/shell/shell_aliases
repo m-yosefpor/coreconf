@@ -91,7 +91,6 @@ alias cvpnf='source ~/hi/cred/vpn/forti-check; ps -A | g openfortivpn; ping -c 1
 alias vpno='cat ~/hi/cred/vpn/openvpn | sudo openvpn --config ~/hi/cred/vpn/openvpn.ovpn --auth-user-pass'
 alias tor='tor -f ~/hi/cred/vpn/torrc'
 
-alias sshc='ssh -F ~/data/snapp/cred/config'
 alias sshdr="ssh -F ~/data/snapp-dr/cred/config"
 alias vpndr='sudo openfortivpn -c ~/data/snapp-dr/cred/forti-jordan'
 alias dx='docker exec -it'

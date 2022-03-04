@@ -2,3 +2,4 @@ source ~/hi/cli/shell/zsh/zshrc
 source ~/hi/cli/shell/shell_aliases
 echo "Hi!" # to make sure the file is sourced
 #export SHELL=bash  #necessary because we call another shell in screen  #will break my phook
+export PATH=$(brew --prefix)/opt/findutils/libexec/gnubin:/Users/mm/Library/Python/3.8/bin:$PATH 
