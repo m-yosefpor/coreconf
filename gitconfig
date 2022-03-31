@@ -2,9 +2,6 @@
 	name = Mohammad Yosefpor
 	email = myusefpur@gmail.com
 	signingkey = A8AA8FA7A1A2EB7D91192C80D85F1B06D39E2D8F
-[pull]
-	rebase = false
-	ff = only
 [pager]
     diff = delta
     log = delta
