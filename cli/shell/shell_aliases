@@ -82,9 +82,12 @@ alias k='sudo kubectl'
 #alias os='openstack'
 ##
 alias tele='x telegram-desktop'
+alias c='open -a "Visual Studio Code"'
 
 ########## cred
-alias vpnc='source ~/hi/cred/vpn/openconnect; echo $OPENCONNECT_PASSWD | sudo openconnect $OPENCONNECT_SRV --servercert $OPENCONNECT_CERT -u $OPENCONNECT_USER --passwd-on-stdin -b'
+alias vpn="kvpnf; vpnf"
+alias vpn1='source ~/data/snapp/cred/exchange; echo $EXCHANGE_PASS | sudo openconnect site1.snapp.cab:43443 --protocol=fortinet --passwd-on-stdin --servercert pin-sha256:U1YDlce4PdoqbRmjLT8zON6FQqqXcQhfBVln9DUxLWI= -u "Mohammad.Yosefpor@snapp.cab" --token-mode=totp  --token-secret="@token_secret"'
+alias vpnb='source ~/data/snapp/cred/exchange; echo $LDAP_PASS | sudo openconnect vpn-aws.snapp.ir:443 --passwd-on-stdin -u "mohammad.yosefpor"'
 alias vpnf='sudo openfortivpn -c ~/data/snapp/cred/forti-as'
 alias vpna='kill -9 $(ps aux | grep "ssh -D 10000" | grep -v color | awk '\''{ print $2 }'\'') ; ssh -D 10000 -fN -F ~/data/snapp/cred/config arvan'
 alias cvpnf='source ~/hi/cred/vpn/forti-check; ps -A | g openfortivpn; ping -c 1 $FORTI_CHECK | g time= | awk '\''{print $8}'\'' '

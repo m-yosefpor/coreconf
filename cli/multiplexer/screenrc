@@ -40,12 +40,12 @@ defbce on
 
 
 ### default windows
-#screen -t Shell1  1 zsh
-#screen -t Shell2  2 zsh
+screen -t Shell1  1 zsh
+screen -t Shell2  2 zsh
 #screen -t myserv  1 bash --init-file ~/hi/brc
-screen -t undercloud  1 su - stack
-screen -t utility  2 ssh utility
-screen -t master  3 ssh -tt utility ssh master-2
+#screen -t undercloud  1 su - stack
+#screen -t utility  2 ssh utility
+#screen -t master  3 ssh -tt utility ssh master-2
 select 1
 
 
