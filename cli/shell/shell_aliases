@@ -100,3 +100,37 @@ alias dx='docker exec -it'
 alias vpnw="sudo knock 178.22.121.34 7000 8000 -d 1000 && sudo wg-quick up /Users/my/Mohammad.conf"
 alias kvpnw="sudo wg-quick down /Users/my/Mohammad.conf"
 
+gh() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: gh <repository-url>"
+        return 1
+    fi
+    
+    # Extract the repository path from the URL
+    repo_url="$1"
+    repo_path=$(echo "$repo_url" | sed 's|https://github.com/||' | sed 's|.git||')
+    
+    # Construct the local directory path
+    local_dir=~/github/$repo_path
+    
+    # Create the directory if it doesn't exist
+    if [ -d "$local_dir" ]; then
+        echo "Error: Directory $local_dir already exists."
+        cd "$local_dir"
+        return 1
+    else
+        mkdir -p "$local_dir"
+    fi
+    
+    # Clone the repository into the directory
+    git clone "$repo_url" "$local_dir"
+    
+    if [ $? -eq 0 ]; then
+        echo "Repository cloned successfully to $local_dir."
+        cd "$local_dir"
+    else
+        echo "Error: Failed to clone the repository."
+        return 1
+    fi
+}
+

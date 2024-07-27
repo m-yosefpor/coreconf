@@ -1,7 +1,7 @@
 [user]
 	name = Mohammad Yosefpor
 	email = myusefpur@gmail.com
-	signingkey = A8AA8FA7A1A2EB7D91192C80D85F1B06D39E2D8F
+	signingkey = 2D3B8FC71ABE2C2FE5CCDE836011B7E0B3169D26
 [pager]
     diff = delta
     log = delta
@@ -16,8 +16,6 @@
 
 [interactive]
     diffFilter = delta --color-only
-[commit]
-	gpgSign = true
 [tag]
 	gpgSign = true
 [filter "lfs"]
@@ -25,3 +23,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[gpg]
+	program = gpg

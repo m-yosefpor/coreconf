@@ -5,6 +5,8 @@ alias cores="coredns -conf Corefile.snapp"
 echo "Hi!" # to make sure the file is sourced
 #export SHELL=bash  #necessary because we call another shell in screen  #will break my phook
 export PATH=$(brew --prefix)/opt/findutils/libexec/gnubin:/Users/mm/Library/Python/3.8/bin:$PATH 
+export PATH=$HOME/.krew/bin:$PATH 
+export WORDCHARS='`~!@#$%^&*()-_=+[{]}\|;:",<.>/?'"'"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
