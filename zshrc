@@ -29,8 +29,7 @@ build_prompt() {
 }
 PROMPT='%{%f%r%k%}$(build_prompt) '
 ##################### (OS envs)
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:${PATH}:$GOPATH/bin"
-export PATH=$(brew --prefix)/opt/findutils/libexec/gnubin:/Users/mm/Library/Python/3.8/bin:$PATH
+export PATH=/opt/homebrew/opt/findutils/libexec/gnubin:/Users/mm/Library/Python/3.8/bin:$PATH
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 HIST_STAMPS="%m/%d %H:%M:%S"
 export HISTSIZE=1000000
