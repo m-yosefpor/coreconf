@@ -1,8 +1,0 @@
-[user]
-	email = myusefpur@gmail.com
-	name = Mohammad Yosefpor
-[core]
-	editor = vim
-	sshCommand = ssh  -F ~/cred/ssh.conf
-[merge]
-	tool = vimdiff
