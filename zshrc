@@ -35,6 +35,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --exact --preview "bat --style=numbers --color=always --line-range :500 {}"'
 ##################### (OS envs)
 export PATH=$HOME/matt-scripts:$HOME/bin:/opt/homebrew/opt/findutils/libexec/gnubin:$PATH
+export PATH="/Users/mm/.antigravity/antigravity/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 HIST_STAMPS="%m/%d %H:%M:%S"
 export HISTSIZE=1000000
@@ -90,6 +91,3 @@ function gitc() {
 }
 ###########
 echo "hi!" # to make sure the file is sourced
-
-# Added by Antigravity
-export PATH="/Users/mm/.antigravity/antigravity/bin:$PATH"
