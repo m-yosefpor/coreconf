@@ -28,7 +28,7 @@ antidote load
 
 eval "$(starship init zsh)"
 setopt CASE_GLOB
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
