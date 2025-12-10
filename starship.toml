@@ -1,6 +1,12 @@
 add_newline = false
 format = "$directory$git_branch$git_status$character"
 
+[directory]
+disabled = false
+truncation_length = 3   # specific folder count before shortening (e.g. .../a/b/c)
+style = "bold blue"     # Blue color to separate it from Git
+format = "[$path]($style) "
+
 [character]
 success_symbol = "[\\$](bold green)"
 error_symbol = "[\\$](bold red)"
@@ -18,3 +24,6 @@ modified = "*"
 staged = "+"
 deleted = "x"
 untracked = "?"
+stashed = "" # "≡"
+ahead = "⇡"
+behind = "⇣"
