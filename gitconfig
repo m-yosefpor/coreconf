@@ -3,10 +3,10 @@
 	email = mo.yosefpor@gmail.com
 	signingkey = DDA3BCA710250358A735417C02F446874DB48D71
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+    #diff = delta
+    #log = delta
+    #reflog = delta
+    #show = delta
 
 [delta]
     plus-style = "syntax #012800"
