@@ -9,7 +9,7 @@ setopt CASE_GLOB
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --layout reverse --exact --preview "bat --style=numbers --color=always --line-range :500 {}"'
 ##################### (OS envs)
-export PATH=$HOME/matt-scripts:$HOME/bin:/opt/homebrew/opt/findutils/libexec/gnubin:$PATH
+export PATH=$HOME/matt-scripts:$HOME/bin:/opt/homebrew/opt/uutils-coreutils/libexec/uubin:$PATH
 export PATH="/Users/mm/.antigravity/antigravity/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 HIST_STAMPS="%m/%d %H:%M:%S"
