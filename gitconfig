@@ -27,3 +27,5 @@
 	program = gpg
 [commit]
 	gpgSign = true
+[pull]
+	rebase = true
